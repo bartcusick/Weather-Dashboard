@@ -1,11 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,800;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
+    <title>Weather Dashboard</title>
+  </head>
+
+  <body>
+    <div id="weather_Main" class="container-fluid body">
+       <div class="row-fluid">
+        <h1 class="col-fluid header">Weather Dashboard <i class="fas fa-cloud-sun-rain"></i> </h1>
+       </div> 
     
-</body>
+      <div id="weather_Search" class="container-fluid">
+        <div class="row">
+           <div class="col-sm searchBox">
+              <h4>Search For a City:</h4>
+               <!-- Search form -->
+               <div class="container-fluid search">
+                <div class="input-group mb-3">
+                    <nav class="navbar navbar-light search">
+                        <form class="form-inline">
+                          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                          <button id="searchBtn" class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                      </nav>
+                </div>
+               
+               </div>
+              <div class="container-fluid btn-group-vertical cityBox" role="group" aria-label="Vertical button group">
+                    <button type="button" class="btn cityButton shadow1" data-value="Austin">Austin</button>
+                    <button type="button" class="btn cityButton shadow1" data-value="Chicago">Chicago</button>
+                    <button type="button" class="btn cityButton shadow1" data-value="New York">New York</button>
+                    <button type="button" class="btn cityButton shadow1" data-value="Orlando">Orlando</button>
+                    <button type="button" class="btn cityButton shadow1" data-value="San Francisco">San Francisco</button>
+                    <button type="button" class="btn cityButton shadow1" data-value="Seatle">Seatle</button>
+                    <button type="button" class="btn cityButton shadow1" data-value="Denver">Denver</button>
+                    <button type="button" class="btn cityButton shadow1" data-value="Atlanta">Atlanta</button>
+              </div>
+          </div>
+              <div class=" flex-container mr-3 w-75 cityBox2">
+                  <div class="container">
+                      <div class="col-fluid cityBox4">
+                         <h4 class="row-fluid">City Name: date <i class="fas fa-cloud"></i></h4>
+                         <h3 class="cityName mb-1 mt-2 " id="currentCity"></h3>
+                        <p>Temperature:<span class="current" id="temperature"></span></p>
+                        <p>Humidity:<span class="current" id="humidity"></span></p>
+                        <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
+                        <p>UV index:<span class="current bg-primary rounded py-2 px-2 text-black" id="uv-index"></span>
+                        </p>    
+                      </div>
+    
+                      <ul class="flex-container">
+                            <li class="flex-item">1
+                                <p id="wDate"></p>
+                                <p id="wImage"></p>
+                                <p>Temp:<span id="wTemp"></span></p>
+                                <p>Humidity:<span id="wHumid"></span></p>
+                            </li>
+                            <li class="flex-item">2
+                                <p id="wDate"></p>
+                                <p id="wImage"></p>
+                                <p>Temp:<span id="wTemp"></span></p>
+                                <p>Humidity:<span id="wHumid"></span></p>
+                            </li>
+                            <li class="flex-item">3
+                                <p id="wDate"></p>
+                                <p id="wImage"></p>
+                                <p>Temp:<span id="wTemp"></span></p>
+                                <p>Humidity:<span id="wHumid"></span></p>
+                            </li>
+                            <li class="flex-item">4
+                                <p id="wDate"></p>
+                                <p id="wImage"></p>
+                                <p>Temp:<span id="wTemp"></span></p>
+                                <p>Humidity:<span id="wHumid"></span></p>
+                            </li>
+                            <li class="flex-item">5
+                                <p id="wDate"></p>
+                                <p id="wImage"></p>
+                                <p>Temp:<span id="wTemp"></span></p>
+                                <p>Humidity:<span id="wHumid"></span></p>
+                            </li>
+                      </ul>
+                    </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="script2.js"></script>
+  </body>
 </html>

@@ -1,0 +1,140 @@
+.button {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  text-align: left;
+  text-size-adjust: inherit;
+  background: linear-gradient(90deg, #b6eef2, #2eabe5);
+  border-radius: 5px;
+  padding: 5px;
+  display: block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 10px; 
+}
+.button1:hover {
+  background: #ffab1a;
+}
+/* .button2:hover { background: linear-gradient(90deg,#a8e52e,#ecf004;} */
+.cityButtons{
+    padding: 10px;  
+}
+
+.cityWeatherText{
+  padding: 10px; 
+  border-radius: 5px;
+  border: 1px solid lightgrey; 
+}
+
+.dayWeatherBox{
+  padding: 10px; 
+  border-radius: 5px;
+  border-style: clear;
+  border: 5px solid white; 
+  background-color: coral;
+}
+.body{
+  padding: 20px; 
+  background-color: #d7d7d7 ;
+}
+.header{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 40px;
+  padding: 10px; 
+  border-radius: 20px 20px 0px 0px;
+  border-style: clear;
+  background-color: #0288d1 ;
+}
+.searchBox{
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  padding: 10px; 
+  border-radius: 20px 0px 0px 20px;
+  border-style: clear;
+  background-color: #29b6f6;
+}
+.search{
+  padding: 5px; 
+  border-radius: 0px 0px 0px 0px;
+  border-style: clear;
+  background-color: #29b6f6;
+}
+
+.cityButton{
+  padding: 10px; 
+  border-radius: 10px 10px 10px 10px;
+  border: 3px solid #b3e5fc;
+  background-color: #e1f5fe;
+}
+.cityButton:hover {background: linear-gradient(#e0f7fa,#4dd0e1);}
+
+.shadow1 {
+	background-color: #e3f2fd ; /* Needed for IEs */
+
+	-moz-box-shadow: inset 5px 5px 5px rgba(145, 145, 145, 0.6);
+	-webkit-box-shadow: inset 5px 5px 5px rgba(145, 145, 145, 0.6);
+	 box-shadow: inset 5px 5px 5px rgba(145, 145, 145, 0.6);
+
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+	zoom: 1;
+}
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flex-item {
+  background: #e1f5fe;
+  border-radius: 10px 10px 10px 10px;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  font-size: 1em;
+  text-align: center;
+}
+.cityBox{
+  padding: 10px; 
+  border-radius: 10px 10px 10px 10px;
+  border-style: clear;
+  background-color: #81d4fa;
+  text-align: center;
+}
+.cityBox2{
+  padding: 10px; 
+  border-radius: 0px 20px 20px 0px;
+  border-style: clear;
+  background-color: #81d4fa;
+  text-align: center;
+}
+.cityBox3{
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  padding: 10px; 
+  border-radius: 20px 0px 0px 20px;
+  border-style: clear;
+  background-color: #e1f5fe;
+}
+.cityBox4{
+  padding: 10px; 
+  border-radius: 10px 10px 10px 10px;
+  border-style: clear;
+  background-color: #e1f5fe;
+  text-align: left;
+}
