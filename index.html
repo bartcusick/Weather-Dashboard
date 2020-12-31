@@ -35,7 +35,7 @@
                 <div class="input-group mb-3">
                     <nav class="navbar navbar-light search">
                         <form class="form-inline">
-                          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                          <input id="cityText" class="form-control mr-sm-2" type="search"  placeholder="Search" aria-label="Search">
                           <button id="searchBtn" class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                       </nav>
@@ -56,12 +56,11 @@
               <div class=" flex-container mr-3 w-75 cityBox2">
                   <div class="container">
                       <div class="col-fluid cityBox4">
-                         <h4 class="row-fluid">City Name: date <i class="fas fa-cloud"></i></h4>
-                         <h3 class="cityName mb-1 mt-2 " id="currentCity"></h3>
-                        <p>Temperature:<span class="current" id="temperature"></span></p>
-                        <p>Humidity:<span class="current" id="humidity"></span></p>
-                        <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
-                        <p>UV index:<span class="current bg-primary rounded py-2 px-2 text-black" id="uv-index"></span>
+                         <h3 id="chosenCity" class="row-fluid"></h3>
+                        <p>Temperature:<span class="chosen" id="temp"></span></p>
+                        <p>Humidity:<span class="chosen" id="humid"></span></p>
+                        <p>Wind Speed:<span class="chosen" id="windS"></span></p>
+                        <p>UV index:<span class="chosen bg-primary rounded py-2 px-2 text-black" id="uvIndex"></span>
                         </p>    
                       </div>
     
@@ -106,6 +105,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-    <script src="script2.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
