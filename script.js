@@ -74,7 +74,27 @@ function uVIndex(ln, lt) {
 $('#searchBtn').on('click', getWeather);
 
 // Function That loads the five day forcast into the smaller text boxes.
+function fiveDayForcast(cityId){
+var queryforcastURL= "https://api.openweathermap.org/data/2.5/forcast?id=" + cityId + "&appid=" + APIKey;
+$.ajax({
+    url: queryforcastURL,
+    method: "GET",
+}).then(function (response){
+    for (i=0; i < 5; i++){
+        var date = new Date(
+            response.list[(i=1) * 8 - 1].dt * 1000
+        )
+        .toLocaleDateString();
+        var iconCode = response.list[(i=1) * 8 - 1].dt * 1000
+        var iconUrl = "https://openweathermap.org/img/wn/" + iconCode + ".png";
+        var temp2 = response.list[(i=1) * 8 - 1].main.temp;
+        var temp3 = ((temp2 - 273.5) * 1.8 + 32).toFixed(0);
+        var humid2 = response.list[(i=1) * 8 - 1].main.humidity;
+    }
+}
 
+
+}
 // Function that loads the last city stored into local storage.
 
 // Function that adds the searched city name to the button list of searched cities.
