@@ -7,27 +7,17 @@ var temp1 = $('#temp');
 var humid1 = $('#humid');
 var windS1 = $('#windS');
 var uvIndex1 = $('#uvIndex');
-var Cities = [];
-
-function find(location) {
-  for (var i = 0; i < cityS.length; i++) {
-    if (location.toUpperCase() === cityS[i]) {
-      return -1;
-    }
-  }
-  return 1;
-}
 
 var APIKey = '71ca48a145c1e2fcc01d2affe81d6050';
-
+// Function for the search button. Then calls todaysWeather function loading Api info
 function getWeather(event) {
   event.preventDefault();
   if (cityText.val().trim() !== '') {
     city = cityText.val().trim();
     todaysWeather(city);
-    console.log(city);
   }
 }
+// Load Api info and weather icon images into the main weather text box and saving City name into local storage.
 function todaysWeather(city) {
   var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=' + APIKey;
 
@@ -35,12 +25,11 @@ function todaysWeather(city) {
     url: queryURL,
     method: 'GET',
   }).then(function (response) {
+    // get the icon info from the API based upon the current weather
     var weatherIcon = response.weather[0].icon;
+    //and then create a variable to load the url for the correct weather icon image
     var iconurl = 'https://openweathermap.org/img/wn/' + weatherIcon + '@2x.png';
     var date = new Date(response.dt * 1000).toLocaleDateString();
-    console.log(date);
-    console.log(weathericon);
-    
     $(chosenCity).html(
       response.name + '(' + date + ')' + '<img src=' + iconurl + '>'
     );
@@ -52,6 +41,7 @@ function todaysWeather(city) {
     var wind = (ws * 2.237).toFixed(0);
     $(windS1).html(wind + 'MPH');
     uVIndex(response.coord.lon, response.coord.lat);
+    
     if (response.cod == 200) {
       cityS = JSON.parse(localStorage.getItem('cityname'));
       if (cityS == null) {
@@ -69,14 +59,10 @@ function todaysWeather(city) {
     }
   });
 }
+// Function that loads the Uv index
 function uVIndex(ln, lt) {
   var uvqURL =
-    'https://api.openweathermap.org/data/2.5/uvi?appid=' +
-    APIKey +
-    '&lat=' +
-    lt +
-    '&lon=' +
-    ln;
+    'https://api.openweathermap.org/data/2.5/uvi?appid=' + APIKey + '&lat=' + lt + '&lon=' + ln;
   $.ajax({
     url: uvqURL,
     method: 'GET',
