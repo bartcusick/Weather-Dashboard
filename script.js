@@ -73,3 +73,10 @@ function uVIndex(ln, lt) {
 
 $('#searchBtn').on('click', getWeather);
 
+// Function That loads the five day forcast into the smaller text boxes.
+
+// Function that loads the last city stored into local storage.
+
+// Function that adds the searched city name to the button list of searched cities.
+
+// Function that makes the buttons on the list of searched cities display the correct city selected.
