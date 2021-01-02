@@ -1,4 +1,4 @@
-var city = "";
+var cName = "";
 var cityText = $("#cityText");
 var searchBtn = $("#searchBtn");
 // var clearButton = $('#clear-history');
@@ -13,13 +13,13 @@ var APIKey = "71ca48a145c1e2fcc01d2affe81d6050";
 function getWeather(event) {
   event.preventDefault();
   if (cityText.val().trim() !== "") {
-    city = cityText.val().trim();
-    todaysWeather(city);
+    cName = cityText.val().trim();
+    todaysWeather(cityName);
   }
 }
 // Load Api info and weather icon images into the main weather text box and saving City name into local storage.
-function todaysWeather(city) {
-  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + APIKey;
+function todaysWeather(cityName) {
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=" + APIKey;
 
   $.ajax({
     url: queryURL,
@@ -45,16 +45,16 @@ function todaysWeather(city) {
     uVIndex(response.coord.lon, response.coord.lat);
     
     if (response.cod == 200) {
-      cityS = JSON.parse(localStorage.getItem("chosenCityNames"));
+      cityS = JSON.parse(localStorage.getItem("chosenNames"));
       if (cityS == null) {
         cityS = [];
-        cityS.push(city.toUpperCase());
-        localStorage.setItem("chosenCityNames", JSON.stringify(cityS));
-        addToList(city);
+        cityS.push(cityName.toUpperCase());
+        localStorage.setItem("chosenNames", JSON.stringify(cityS));
+        addToList(cityName);
       } else {
-        if (find(city) > 0) {
-          cityS.push(city.toUpperCase());
-          localStorage.setItem("chosenCityNames", JSON.stringify(cityS));
+        if (find(cityName) > 0) {
+          cityS.push(cityName.toUpperCase());
+          localStorage.setItem("chosenNames", JSON.stringify(cityS));
 
         }
       }
@@ -105,7 +105,7 @@ $.ajax({
  });
 }
 
-// Function that loads the last city stored into local storage.
+// Function that loads the last city stored from local storage.
 
 // Function that adds the searched city name to the button list of searched cities.
 
