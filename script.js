@@ -1,6 +1,8 @@
 var cName = "";
 var cityText = $("#cityText");
 var searchBtn = $("#searchBtn");
+var Austin = $("#Austin");
+var Chicago = $("#Chicago");
 // var clearButton = $('#clear-history');
 var chosenCity = $("#chosenCity");
 var temp1 = $("#temp");
@@ -13,7 +15,7 @@ var APIKey = "71ca48a145c1e2fcc01d2affe81d6050";
 function getWeather(event) {
   event.preventDefault();
   if (cityText.val().trim() !== "") {
-    cName = cityText.val().trim();
+    cityName = cityText.val().trim();
     todaysWeather(cityName);
   }
 }
@@ -33,6 +35,7 @@ function todaysWeather(cityName) {
     $(chosenCity).html(response.name + "(" + date + ")" + "<img src=" + wIconUrl + ">");
     console.log(response.name);
     console.log(response.id);
+    
     var chosenId = response.id;
     console.log(chosenId);
     fDF(response.id);
@@ -53,7 +56,7 @@ function todaysWeather(cityName) {
         addToList(cityName);
       } else {
         if (find(cityName) > 0) {
-          cityS.push(cityName.toUpperCase());
+          cityS.push(cName.toUpperCase());
           localStorage.setItem("chosenNames", JSON.stringify(cityS));
 
         }
@@ -73,6 +76,14 @@ function uVIndex(ln, lt) {
 }
 
 $("#searchBtn").on("click", getWeather);
+$("#Austin").on("click", function (event){
+    cityText = "Austin";
+    getWeather();
+});
+
+
+$("#chicago").on("click", getWeather);
+
 
 // Function That loads the five day forcast into the smaller text boxes.
 function fDF(chosenId){
@@ -105,7 +116,7 @@ $.ajax({
  });
 }
 
-// Function that loads the last city stored from local storage.
+// Function that loads the last city stored into local storage.
 
 // Function that adds the searched city name to the button list of searched cities.
 
