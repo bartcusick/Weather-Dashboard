@@ -49,97 +49,29 @@
           Weather Dashboard <i class="fas fa-cloud-sun-rain"></i>
         </h1>
       </div>
-
-      <div id="weather_Search" class="container-fluid">
+    <!--  -->
+    <!--  -->
+    <div id="weather_Search" class="container-fluid">
         <div class="row">
           <div class="col-sm searchBox">
-            <h4>Search For a City:</h4>
-            <!-- Search form -->
-            <div class="container-fluid search">
-              <div class="input-group mb-3">
-                <nav class="navbar navbar-light search">
-                  <form class="form-inline">
-                    <input
-                      id="cityText"
-                      class="form-control mr-sm-2"
-                      type="search"
-                      placeholder="Search"
-                      aria-label="Search"
-                    />
-                    <button
-                      id="searchBtn"
-                      class="btn btn-primary"
-                      type="submit"
-                    >
-                      <i class="fa fa-search"></i>
-                    </button>
+                <h4>Search For a City:</h4>
+                <!-- Search form -->
+                <div class="container-fluid search">
+                <div class="input-group mb-3">
+                    <nav class="navbar navbar-light search">
+                    <form class="form-inline">
+                        <input id="cityText" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <button id="searchBtn" class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
                   </form>
                 </nav>
               </div>
             </div>
-            <div
-              class="container-fluid btn-group-vertical cityBox"
-              role="group"
-              aria-label="Vertical button group"
-            >
-              <button
-                type="button"
-                class="btn cityButton shadow1"
-                data-value="Austin"
-              >
-                Austin
-              </button>
-              <button
-                type="button"
-                class="btn cityButton shadow1"
-                data-value="Chicago"
-              >
-                Chicago
-              </button>
-              <button
-                type="button"
-                class="btn cityButton shadow1"
-                data-value="New York"
-              >
-                New York
-              </button>
-              <button
-                type="button"
-                class="btn cityButton shadow1"
-                data-value="Orlando"
-              >
-                Orlando
-              </button>
-              <button
-                type="button"
-                class="btn cityButton shadow1"
-                data-value="San Francisco"
-              >
-                San Francisco
-              </button>
-              <button
-                type="button"
-                class="btn cityButton shadow1"
-                data-value="Seatle"
-              >
-                Seatle
-              </button>
-              <button
-                type="button"
-                class="btn cityButton shadow1"
-                data-value="Denver"
-              >
-                Denver
-              </button>
-              <button
-                type="button"
-                class="btn cityButton shadow1"
-                data-value="Atlanta"
-              >
-                Atlanta
-              </button>
+            <div class="container-fluid btn-group-vertical cityBox" role="group" aria-label="Vertical button group">
+                <button type="button" class="btn cityButton shadow1" data-value="Austin"> Austin</button>
+                <button type="button" class="btn cityButton shadow1" data-value="Chicago"></button>
+
             </div>
-          </div>
+         </div>
           <div class="flex-container mr-3 w-75 cityBox2">
             <div class="container">
               <div class="col-fluid cityBox4">
@@ -147,48 +79,43 @@
                 <p>Temperature:<span class="chosen" id="temp"></span></p>
                 <p>Humidity:<span class="chosen" id="humid"></span></p>
                 <p>Wind Speed:<span class="chosen" id="windS"></span></p>
-                <p>
-                  UV index:<span
-                    class="chosen bg-primary rounded py-2 px-2 text-black"
-                    id="uvIndex"
-                  ></span>
-                </p>
+                <p>UV index:<span class="chosen bg-primary rounded py-2 px-2 text-black" id="uvIndex"></span></p>
               </div>
               <div id="fiveDF">
                 <h5 class="fiveDF"> Five Day Forcast</h5>
                 <ul class="flex-container fDF">
+                    <!-- Day1 -->
                   <li class="flex-item fDF">
-                    1
-                    <p id="fDFDate0"></p>
-                    <p id="fDFImage0"></p>
+                    <p id="fDFDate0"> Date:</p>
+                    <p id="fDFImage0">Weather Image</p>
                     <p>Temp:<span id="fDFTemp0"></span></p>
                     <p>Humidity:<span id="fDFHumid0"></span></p>
                   </li>
+                  <!-- Day2 -->
                   <li class="flex-item fDF">
-                    2
-                    <p id="fDFDate1"></p>
-                    <p id="fDFImage1"></p>
+                    <p id="fDFDate1"> Date:</p>
+                    <p id="fDFImage1">Weather Image</p>
                     <p>Temp:<span id="fDFTemp1"></span></p>
                     <p>Humidity:<span id="fDFHumid1"></span></p>
                   </li>
+                  <!-- Day3 -->
                   <li class="flex-item fDF">
-                    3
-                    <p id="fDFDate2"></p>
-                    <p id="fDFImage2"></p>
+                    <p id="fDFDate2"> Date:</p>
+                    <p id="fDFImage2">Weather Image</p>
                     <p>Temp:<span id="fDFTemp2"></span></p>
                     <p>Humidity:<span id="fDFHumid2"></span></p>
                   </li>
+                  <!-- Day4 -->
                   <li class="flex-item fDF">
-                    4
-                    <p id="fDFDate3"></p>
-                    <p id="fDFImage3"></p>
+                    <p id="fDFDate3"> Date:</p>
+                    <p id="fDFImage3">Weather Image</p>
                     <p>Temp:<span id="fDFTemp3"></span></p>
                     <p>Humidity:<span id="fDFHumid3"></span></p>
                   </li>
+                  <!-- Day5 -->
                   <li class="flex-item fDF">
-                    5
-                    <p id="fDFDate4"></p>
-                    <p id="fDFImage4"></p>
+                    <p id="fDFDate4"> Date:</p>
+                    <p id="fDFImage4">Weather Image</p>
                     <p>Temp:<span id="fDFTemp4"></span></p>
                     <p>Humidity:<span id="fDFHumid4"></span></p>
                   </li>

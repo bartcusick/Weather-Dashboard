@@ -26,14 +26,16 @@ function todaysWeather(city) {
     method: "GET",
   }).then(function (response) {
     // get the icon info from the API based upon the current weather
-    var weatherIcon = response.weather[0].icon;
+    var wIcon = response.weather[0].icon;
     //and then create a variable to load the url for the correct weather icon image
-    var iconurl = "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
+    var wIconUrl = 'https://openweathermap.org/img/wn/' + wIcon + '.png';
     var date = new Date(response.dt * 1000).toLocaleDateString();
-    $(chosenCity).html(
-      response.name + "(" + date + ")" + "<img src=" + iconurl + ">"
-    );
-
+    $(chosenCity).html(response.name + "(" + date + ")" + "<img src=" + wIconUrl + ">");
+    console.log(response.name);
+    console.log(response.id);
+    var chosenId = response.id;
+    console.log(chosenId);
+    fDF(response.id);
     var temp = (response.main.temp - 273.15) * 1.8 + 32;
     $(temp1).html(temp.toFixed(0) + "&#8457");
     $(humid1).html(response.main.humidity + "%");
@@ -43,17 +45,17 @@ function todaysWeather(city) {
     uVIndex(response.coord.lon, response.coord.lat);
     
     if (response.cod == 200) {
-      cityS = JSON.parse(localStorage.getItem("cityname"));
+      cityS = JSON.parse(localStorage.getItem("chosenCityNames"));
       if (cityS == null) {
         cityS = [];
         cityS.push(city.toUpperCase());
-        localStorage.setItem("cityname", JSON.stringify(cityS));
+        localStorage.setItem("chosenCityNames", JSON.stringify(cityS));
         addToList(city);
       } else {
         if (find(city) > 0) {
           cityS.push(city.toUpperCase());
-          localStorage.setItem("cityname", JSON.stringify(cityS));
-          addToList(city);
+          localStorage.setItem("chosenCityNames", JSON.stringify(cityS));
+
         }
       }
     }
@@ -61,10 +63,9 @@ function todaysWeather(city) {
 }
 // Function that loads the Uv index
 function uVIndex(ln, lt) {
-  var uvqURL =
-    "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lt + "&lon=" + ln;
+  var uvIURL ="https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lt + "&lon=" + ln;
   $.ajax({
-    url: uvqURL,
+    url: uvIURL,
     method: "GET",
   }).then(function (response) {
     $(uvIndex).html(response.value);
@@ -74,27 +75,32 @@ function uVIndex(ln, lt) {
 $("#searchBtn").on("click", getWeather);
 
 // Function That loads the five day forcast into the smaller text boxes.
-function fDF(cityId){
-var queryforcastURL= "https://api.openweathermap.org/data/2.5/forcast?id=" + cityId + "&appid=" + APIKey;
+function fDF(chosenId){
+
+var fDFURL = "http://api.openweathermap.org/data/2.5/forecast?id=" + chosenId + "&appid=" + APIKey;
 $.ajax({
-    url: queryforcastURL,
+    url: fDFURL,
     method: "GET",
   }).then(function (response){
     for (i=0; i < 5; i++){
-        var date = new Date(
-            response.list[(i=1) * 8 - 1].dt * 1000
-        )
-        .toLocaleDateString();
-        var iconCode = response.list[(i=1) * 8 - 1].dt * 1000
-        var iconUrl = "https://openweathermap.org/img/wn/" + iconCode + ".png";
-        var temp2 = response.list[(i=1) * 8 - 1].main.temp;
+        var date = new Date(response.list[(i + 1) * 8 - 1].dt * 1000).toLocaleDateString();
+        console.log("date = "+date);
+        //and then create a variable to load the url for the correct weather icon image
+        var fDFIcon = response.list[(i + 1) * 8 - 1].weather[0].icon;
+        var fDFIconURL = "https://openweathermap.org/img/wn/" + fDFIcon + ".png";
+        var temp2 = response.list[(i + 1) * 8 - 1].main.temp;
         var temp3 = ((temp2 - 273.5) * 1.8 + 32).toFixed(0);
-        var humid2 = response.list[(i=1) * 8 - 1].main.humidity;
+        var humid2 = response.list[(i + 1) * 8 - 1].main.humidity;
+        
+        console.log("temp2 = " + temp2);
+        console.log(temp3);
+        console.log(humid2);
+
         //load the five day forcast info into the text box
-        $("#fDF" + i).html(date);
-        $("#fDFImg" + i).html("<img src=" + iconurl + ">");
-        $("#fDFTemp" + i).html(temp3 + "&#8457");
-        $("#fDFHumid" + i).html(humid2 + "%");
+                $("#fDFDate" + i).html(date);
+                $("#fDFImage" + i).html("<img src=" + fDFIconURL + ">");
+                $("#fDFTemp" + i).html(temp3 + "&#8457");
+                $("#fDFHumid" + i).html(humid2 + "%");
     }
  });
 }

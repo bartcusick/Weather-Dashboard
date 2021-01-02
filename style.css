@@ -103,7 +103,7 @@
   border-radius: 10px 10px 10px 10px;
   padding: 5px;
   width: 200px;
-  height: 150px;
+  height: 200px;
   margin-top: 10px;
   font-size: 1em;
   text-align: center;
@@ -140,7 +140,8 @@
 }
 .fiveDF{
     padding: 10px; 
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 0px 0px 10px;
+    border: 10px solid #81d4fa;
     border-style: clear;
     background-color: #29b6f6;
     text-align: left;
