@@ -146,3 +146,19 @@
     background-color: #29b6f6;
     text-align: left;
   }
+  .fDF{
+    padding: 10px; 
+    border-radius: 10px 10px 10px 10px;
+    /* border: 10px solid #81d4fa; */
+    /* border-style: clear; */
+    color: #F0F3F2;
+    background: #284b71;
+    text-align: left;
+  }
+  .fDF2{
+    padding: 10px; 
+    border-radius: 10px 10px 10px 10px;
+    color: #F0F3F2;
+    background: #355e8a;
+    text-align: left;
+  }
