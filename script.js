@@ -21,7 +21,7 @@ function getWeather(event) {
 }
 // Load Api info and weather icon images into the main weather text box and saving City name into local storage.
 function todaysWeather(cityName) {
-  var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=" + APIKey;
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=" + APIKey;
 
   $.ajax({
     url: queryURL,
@@ -66,7 +66,7 @@ function todaysWeather(cityName) {
 }
 // Function that loads the Uv index
 function uVIndex(ln, lt) {
-  var uvIURL ="http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lt + "&lon=" + ln;
+  var uvIURL ="https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lt + "&lon=" + ln;
   $.ajax({
     url: uvIURL,
     method: "GET",
@@ -88,7 +88,7 @@ $("#chicago").on("click", getWeather);
 // Function That loads the five day forcast into the smaller text boxes.
 function fDF(chosenId){
 
-var fDFURL = "http://api.openweathermap.org/data/2.5/forecast?id=" + chosenId + "&appid=" + APIKey;
+var fDFURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + chosenId + "&appid=" + APIKey;
 $.ajax({
     url: fDFURL,
     method: "GET",
