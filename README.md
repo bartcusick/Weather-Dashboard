@@ -18,7 +18,7 @@ Used the [OpenWeather API](https://openweathermap.org/api) to retrieve weather d
 ## Installation
         Runs in Web Browser
 ## Usage
-- [Weather-Dashboard](https://github.com/bartcusick/Weather-Dashboard)
+- [Weather-Dashboard](https://bartcusick.github.io/Weather-Dashboard/)
 ## Repository
 - [Weather-Dashboard Repo](https://github.com/bartcusick/Weather-Dashboard)
 ## GitHub
